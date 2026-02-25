@@ -11,6 +11,9 @@ public struct SlideRouterView: View {
     @ObservedObject
     private var slideIndexController: SlideIndexController
 
+    @Namespace
+    private var presentationNamespace
+
     public init(slideIndexController: SlideIndexController) {
         self.slideIndexController = slideIndexController
     }
@@ -31,6 +34,7 @@ public struct SlideRouterView: View {
             forward: { slideIndexController.forward() }
         )
         .environment(\.slideIndexController, slideIndexController)
+        .environment(\.presentationNamespace, presentationNamespace)
     }
 }
 
