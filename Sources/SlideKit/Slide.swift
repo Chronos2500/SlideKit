@@ -61,6 +61,8 @@ public protocol Slide: View {
     /// var transition: AnyTransition { .slide.combined(with: .opacity) }
     /// ```
     var transition: AnyTransition { get }
+
+    var slideAnimation: Animation { get }
 }
 
 extension Slide {
@@ -71,4 +73,6 @@ extension Slide {
     /// Default implementation of transition.
     /// Returns identity transition (no animation) when not overridden.
     public var transition: AnyTransition { .identity }
+
+    public var slideAnimation: Animation { .default }
 }

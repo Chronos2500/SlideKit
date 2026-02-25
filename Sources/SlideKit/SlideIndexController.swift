@@ -60,7 +60,7 @@ public final class SlideIndexController: ObservableObject {
         guard currentIndex + 1 < slides.count else {
             return false
         }
-        withAnimation {
+        withAnimation(currentSlide.slideAnimation) {
             currentIndex += 1
         }
         let newPhasedStateStore = getPhasedStateStore(at: currentIndex)
