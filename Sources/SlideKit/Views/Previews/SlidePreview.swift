@@ -12,8 +12,11 @@ public struct SlidePreview: View {
     @ObservedObject
     private var slideIndexController: SlideIndexController
 
-    @Environment(\.previewForegroundColor)
-    private var foregroundColor: Color
+    @Environment(\.previewPrimaryColor)
+    private var primaryColor: Color
+
+    @Environment(\.previewSecondaryColor)
+    private var secondaryColor: Color
 
     @Environment(\.previewBackgroundColor)
     private var backgroundColor: Color
@@ -30,36 +33,27 @@ public struct SlidePreview: View {
             SlideRouterView(slideIndexController: slideIndexController)
                 .background(backgroundColor)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                .foregroundColor(foregroundColor)
+                .foregroundStyle(primaryColor, secondaryColor)
         }
         .ignoresSafeArea()
         .aspectRatio(slideSize, contentMode: .fit)
     }
 
-    public func previewColor(foreground: Color = .black, background: Color = .white) -> some View {
+    public func previewColor(primary: Color = .black, secondary: Color = .secondary, background: Color = .white) -> some View {
         self.environment(\.previewBackgroundColor, background)
-            .environment(\.previewForegroundColor, foreground)
+            .environment(\.previewPrimaryColor, primary)
+            .environment(\.previewSecondaryColor, secondary)
     }
-}
-
-private enum PreviewBackgroundColorKey: EnvironmentKey {
-    static let defaultValue = Color.white
 }
 
 extension EnvironmentValues {
-    fileprivate var previewBackgroundColor: Color {
-        get { self[PreviewBackgroundColorKey.self] }
-        set { self[PreviewBackgroundColorKey.self] = newValue }
-    }
-}
-
-private enum PreviewForegroundColorKey: EnvironmentKey {
-    static let defaultValue = Color.black
+    @Entry fileprivate var previewBackgroundColor: Color = .white
 }
 
 extension EnvironmentValues {
-    fileprivate var previewForegroundColor: Color {
-        get { self[PreviewForegroundColorKey.self] }
-        set { self[PreviewForegroundColorKey.self] = newValue }
-    }
+    @Entry fileprivate var previewPrimaryColor: Color = .black
+}
+
+extension EnvironmentValues {
+    @Entry fileprivate var previewSecondaryColor: Color = .secondary
 }
