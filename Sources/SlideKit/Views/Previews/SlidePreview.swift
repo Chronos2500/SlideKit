@@ -35,7 +35,6 @@ public struct SlidePreview: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                 .foregroundStyle(primaryColor, secondaryColor)
         }
-        .ignoresSafeArea()
         .aspectRatio(slideSize, contentMode: .fit)
     }
 
