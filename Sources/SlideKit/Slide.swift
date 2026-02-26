@@ -71,8 +71,7 @@ extension Slide {
     public func phasesStateSore(_ phasedStateStore: PhasedStateStore<SlidePhasedState>) {}
 
     /// Default implementation of transition.
-    /// Returns identity transition (no animation) when not overridden.
-    public var transition: AnyTransition { .identity }
+    public var transition: AnyTransition { .opacity }
 
     public var slideAnimation: Animation { .default }
 }
