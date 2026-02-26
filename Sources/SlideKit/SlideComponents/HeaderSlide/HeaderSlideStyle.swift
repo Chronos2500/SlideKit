@@ -51,6 +51,16 @@ public struct HeaderSlideStyleConfiguration {
         public var body: some View { view() }
     }
 
+    public struct SubHeader: View {
+        private let view: () -> AnyView
+
+        init(view: @escaping () -> some View) {
+            self.view = { AnyView(view()) }
+        }
+
+        public var body: some View { view() }
+    }
+
     public struct Content: View {
         private let view: () -> AnyView
 
@@ -62,6 +72,8 @@ public struct HeaderSlideStyleConfiguration {
     }
 
     public var header: HeaderSlideStyleConfiguration.Header
+
+    public var subHeader: HeaderSlideStyleConfiguration.SubHeader
 
     public var content: HeaderSlideStyleConfiguration.Content
 }
@@ -86,12 +98,15 @@ public struct DefaultHeaderSlideStyle: HeaderSlideStyle {
             VStack(alignment: .leading, spacing: 80) {
                 HStack(spacing: 32) {
                     Capsule()
-                        .foregroundColor(.accentColor)
+                        .foregroundStyle(.tint)
                         .frame(width: 10, height: 120)
                     configuration.header
                         .font(.system(size: 90))
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
+                configuration.subHeader
+                    .font(.system(size: 70))
+                    .foregroundStyle(.secondary)
                 VStack(alignment: .leading, spacing: 48) {
                     configuration.content
                         .font(.system(size: 48))

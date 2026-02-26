@@ -43,6 +43,19 @@ public struct HeaderSlide: View {
             header: .init {
                 Text(header)
             },
+            subHeader: .init { EmptyView() },
+            content: .init { content() }
+        )
+    }
+
+    public init(_ header:  LocalizedStringKey, subHeader: LocalizedStringKey, @ViewBuilder content: @escaping () -> some View) {
+        self.configuration = HeaderSlideStyleConfiguration(
+            header: .init {
+                Text(header)
+            },
+            subHeader: .init {
+                Text(subHeader)
+            },
             content: .init { content() }
         )
     }
@@ -50,6 +63,15 @@ public struct HeaderSlide: View {
     public init(@ViewBuilder header: @escaping () -> some View, @ViewBuilder content: @escaping () -> some View) {
         self.configuration = HeaderSlideStyleConfiguration(
             header: .init { header() },
+            subHeader: .init { EmptyView() },
+            content: .init { content() }
+        )
+    }
+
+    public init(@ViewBuilder header: @escaping () -> some View, @ViewBuilder subHeader: @escaping () -> some View, @ViewBuilder content: @escaping () -> some View) {
+        self.configuration = HeaderSlideStyleConfiguration(
+            header: .init { header() },
+            subHeader: .init { subHeader() },
             content: .init { content() }
         )
     }
