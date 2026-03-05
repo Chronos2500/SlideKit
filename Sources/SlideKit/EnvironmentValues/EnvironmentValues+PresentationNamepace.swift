@@ -8,5 +8,5 @@
 import SwiftUI
 
 extension EnvironmentValues {
-    @Entry public var presentationNamespace: Namespace.ID? = nil
+    @Entry public var presentationNamespace: Namespace.ID = Namespace().wrappedValue
 }
