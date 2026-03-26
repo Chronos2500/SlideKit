@@ -76,7 +76,6 @@ extension View {
         if #available(macOS 15.0, *) {
             self
                 .gesture(WindowDragGesture())
-                .allowsWindowActivationEvents()
         } else {
             self
         }
