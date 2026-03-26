@@ -44,6 +44,7 @@ public struct PresentationView<Content>: View where Content: View {
         }
         .ignoresSafeArea()
 #if os(macOS)
+        .allowsWindowDragGesture()
         .configureWindow { window in
             window?.delegate = windowEventHandler
             window?.standardWindowButton(.zoomButton)?.isHidden = true
@@ -67,3 +68,18 @@ public class PresentationWindowEventHandler: NSObject, NSWindowDelegate {
     }
 }
 #endif
+
+
+extension View {
+    @ViewBuilder
+    func allowsWindowDragGesture() -> some View {
+        if #available(macOS 15.0, *) {
+            self
+                .gesture(WindowDragGesture())
+                .allowsWindowActivationEvents()
+        } else {
+            self
+        }
+    }
+}
+
