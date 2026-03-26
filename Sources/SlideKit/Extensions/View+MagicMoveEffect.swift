@@ -13,7 +13,7 @@ struct MagicMoveEffectModifier<ID>: ViewModifier where ID: Hashable {
 
     func body(content: Content) -> some View {
         content
-            .matchedGeometryEffect(id: id, in: namespace)
+            .matchedGeometryEffect(id: id, in: namespace ?? Namespace().wrappedValue)
     }
 }
 
