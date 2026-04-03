@@ -39,7 +39,7 @@ public struct Item: View {
 
     public init(
         _ text: LocalizedStringKey,
-        accessory: ItemAccessory? = .bullet,
+        accessory: ItemAccessory? = nil,
         @ViewBuilder child: @escaping () -> some View
     ) {
         self.label = { AnyView(Text(text)) }
@@ -48,7 +48,7 @@ public struct Item: View {
     }
 
     public init(
-        accessory: ItemAccessory? = .bullet,
+        accessory: ItemAccessory? = nil,
         label: @escaping () -> some View,
         @ViewBuilder child: @escaping () -> some View
     ) {
@@ -59,7 +59,7 @@ public struct Item: View {
 
     public init(
         _ text: LocalizedStringKey,
-        accessory: ItemAccessory? = .bullet
+        accessory: ItemAccessory? = nil
     ) {
         self.label = { AnyView(Text(text)) }
         self.child = nil
@@ -67,7 +67,7 @@ public struct Item: View {
     }
 
     public init(
-        accessory: ItemAccessory? = .bullet,
+        accessory: ItemAccessory? = nil,
         label: @escaping () -> some View
     ) {
         self.label = { AnyView(label()) }
