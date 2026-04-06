@@ -25,7 +25,7 @@ If you want to know more details, refer the [DocC Style Document](https://mtj092
 - [x] Provide `HeaderSlide`, it is a template slide which has a title.
 - [x] Support `HeaderSlideStyle`, so you can customize the design of the `HeaderSlide`.
 - [x] Provide some utility view components
-    - `Code`: Syntax Highlighted view (Only Swift is supported now.)
+    - `Code`: Syntax highlighted view for Swift and Objective-C.
     - `Item`: Itemization view. `Item` supports nested structures.
 - [x] Show the current slide index at bottom right on slide.
 - [x] Support two windows, presentation window and presenter window.
@@ -53,6 +53,21 @@ struct IntroductionSlide: View {
 ```
 And then, this is the result of the code.  
 <img width="1096" alt="IntroductionSlide" src="https://user-images.githubusercontent.com/12427733/190955403-ed64a5fd-eed0-4a4c-8684-75f39623a563.png">
+
+## Syntax Highlighting
+If you want to highlight Objective-C, use `ObjCSyntaxHighlighter`.
+
+```swift
+import ObjCSyntaxInk
+
+let sourceCode = """
+@interface UIScrollView ()
+- (BOOL)_scrollToTopIfPossible:(BOOL)animated;
+@end
+"""
+
+Code(sourceCode, syntaxHighlighter: ObjCSyntaxHighlighter.presentation(fontSize: 32))
+```
 
 ## Presentations made with SlideKit
 Feel free to add your presentations made by SlideKit to the following list!!

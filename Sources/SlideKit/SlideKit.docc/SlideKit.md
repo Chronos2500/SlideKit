@@ -29,6 +29,20 @@ struct IntroductionSlide: View {
 And this is the result of the example.
 ![A screen shot of the result above sample code](IntroductionSlide.png)
 
+`Code` also supports Objective-C when you provide an `ObjCSyntaxHighlighter`.
+
+```swift
+import ObjCSyntaxInk
+
+let sourceCode = """
+@interface UIScrollView ()
+- (BOOL)_scrollToTopIfPossible:(BOOL)animated;
+@end
+"""
+
+Code(sourceCode, syntaxHighlighter: ObjCSyntaxHighlighter.presentation(fontSize: 32))
+```
+
 ## Topics
 
 ### Essentials
@@ -52,4 +66,3 @@ And this is the result of the example.
 - ``HeaderSlideStyle``
 - ``ItemStyle`` 
 - ``SlideTheme``
-

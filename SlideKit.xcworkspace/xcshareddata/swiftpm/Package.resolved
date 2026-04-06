@@ -1,5 +1,5 @@
 {
-  "originHash" : "357f3587d6f7aa37a8fd2c9822ac1019b1f4fab1572ebe3e7c46118a42ea558a",
+  "originHash" : "4a2058dad694871a62aedbef4fb54d43982e9868350165f7c38596d1da40898b",
   "pins" : [
     {
       "identity" : "swift-docc-plugin",
@@ -29,12 +29,38 @@
       }
     },
     {
+      "identity" : "swifttreesitter",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ChimeHQ/SwiftTreeSitter",
+      "state" : {
+        "revision" : "08ef81eb8620617b55b08868126707ad72bf754f",
+        "version" : "0.25.0"
+      }
+    },
+    {
       "identity" : "syntaxink",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/mtj0928/SyntaxInk.git",
+      "location" : "https://github.com/lynnswap/SyntaxInk.git",
       "state" : {
-        "revision" : "66fea7139f8e27cc2ac7c42fa9a5167c59685e16",
-        "version" : "0.0.2"
+        "revision" : "7ecf1c431397ab74d9bcdc325bd7932952ff4694"
+      }
+    },
+    {
+      "identity" : "tree-sitter",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/tree-sitter/tree-sitter",
+      "state" : {
+        "revision" : "da6fe9beb4f7f67beb75914ca8e0d48ae48d6406",
+        "version" : "0.25.10"
+      }
+    },
+    {
+      "identity" : "tree-sitter-objc",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/tree-sitter-grammars/tree-sitter-objc",
+      "state" : {
+        "revision" : "18802acf31d0b5c1c1d50bdbc9eb0e1636cab9ed",
+        "version" : "3.0.2"
       }
     }
   ],

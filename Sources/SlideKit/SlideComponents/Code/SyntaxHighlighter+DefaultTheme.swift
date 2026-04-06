@@ -1,3 +1,4 @@
+import ObjCSyntaxInk
 import SwiftSyntaxInk
 import SyntaxInk
 import SwiftUI
@@ -92,6 +93,37 @@ extension SyntaxHighlighter where Self == SwiftSyntaxHighlighter {
             }
             return base
         })
+    }
+}
+
+extension SyntaxHighlighter where Self == ObjCSyntaxHighlighter {
+
+    /// A color theme matching Xcode's "Presentation" theme for Objective-C
+    public static var presentation: Self {
+        presentation(fontSize: 48)
+    }
+
+    /// A color theme matching Xcode's "Presentation" theme for Objective-C
+    public static func presentation(fontSize: CGFloat) -> Self {
+        let base = SyntaxStyle(
+            font: .custom(name: "Menlo", size: fontSize, weight: .regular),
+            color: SyntaxColor(red: 0, green: 0, blue: 0)
+        )
+        return ObjCSyntaxHighlighter(theme: .presentationLight(base))
+    }
+
+    /// A color theme matching Xcode's "Presentation Dark" theme for Objective-C
+    public static var presentationDark: Self {
+        presentationDark(fontSize: 48)
+    }
+
+    /// A color theme matching Xcode's "Presentation Dark" theme for Objective-C
+    public static func presentationDark(fontSize: CGFloat) -> Self {
+        let base = SyntaxStyle(
+            font: .custom(name: "Menlo", size: fontSize, weight: .regular),
+            color: SyntaxColor(red: 255, green: 255, blue: 255)
+        )
+        return ObjCSyntaxHighlighter(theme: .presentationDark(base))
     }
 }
 
