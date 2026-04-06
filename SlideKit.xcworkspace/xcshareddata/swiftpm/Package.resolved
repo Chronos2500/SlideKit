@@ -1,5 +1,5 @@
 {
-  "originHash" : "4a2058dad694871a62aedbef4fb54d43982e9868350165f7c38596d1da40898b",
+  "originHash" : "bf7ae447cb7dab519263996774e6b881a06ad36bdbee98d497a362d7702c069b",
   "pins" : [
     {
       "identity" : "swift-docc-plugin",
@@ -42,7 +42,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/lynnswap/SyntaxInk.git",
       "state" : {
-        "revision" : "7ecf1c431397ab74d9bcdc325bd7932952ff4694"
+        "revision" : "047f2c801bdffb94e89c660271b34254865fe13e",
+        "version" : "0.0.3"
       }
     },
     {

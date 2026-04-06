@@ -66,7 +66,7 @@ let sourceCode = """
 @end
 """
 
-Code(sourceCode, syntaxHighlighter: ObjCSyntaxHighlighter.presentation(fontSize: 32))
+Code(sourceCode, objcSyntaxHighlighter: .presentation(fontSize: 32))
 ```
 
 ## Presentations made with SlideKit

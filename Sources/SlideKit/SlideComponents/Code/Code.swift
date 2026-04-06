@@ -25,10 +25,10 @@ public struct Code<
 
     public init(
         _ code: String,
-        syntaxHighlighter: ObjCSyntaxHighlighter
+        objcSyntaxHighlighter: ObjCSyntaxHighlighter
     ) where Grammar == ObjCGrammar, Theme == ObjCTheme {
         self.code = code
-        self.syntaxHighlighter = syntaxHighlighter
+        self.syntaxHighlighter = objcSyntaxHighlighter
     }
 
     public var body: some View {
