@@ -13,13 +13,14 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/swiftlang/swift-docc-plugin", from: "1.0.0"),
         .package(url: "https://github.com/swiftlang/swift-syntax", from: "601.0.0"),
-        .package(url: "https://github.com/mtj0928/SyntaxInk", from: "0.0.2"),
+        .package(url: "https://github.com/lynnswap/SyntaxInk", from: "0.0.3"),
     ],
     targets: [
         .target(
             name: "SlideKit",
             dependencies: [
                 "SlideKitMacros",
+                .product(name: "ObjCSyntaxInk", package: "SyntaxInk"),
                 .product(name: "SwiftSyntaxInk", package: "SyntaxInk"),
                 .product(name: "SyntaxInk", package: "SyntaxInk")
             ]

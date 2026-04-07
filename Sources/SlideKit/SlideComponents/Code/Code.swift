@@ -1,3 +1,4 @@
+import ObjCSyntaxInk
 import SwiftSyntaxInk
 import SyntaxInk
 import SwiftUI
@@ -20,6 +21,14 @@ public struct Code<
     ) where Grammar == SwiftGrammar, Theme == SwiftTheme {
         self.code = code
         self.syntaxHighlighter = syntaxHighlighter
+    }
+
+    public init(
+        _ code: String,
+        objcSyntaxHighlighter: ObjCSyntaxHighlighter
+    ) where Grammar == ObjCGrammar, Theme == ObjCTheme {
+        self.code = code
+        self.syntaxHighlighter = objcSyntaxHighlighter
     }
 
     public var body: some View {
