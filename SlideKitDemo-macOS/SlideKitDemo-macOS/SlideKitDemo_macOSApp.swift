@@ -31,6 +31,7 @@ struct SlideKitDemo_macOSApp: App {
                 presentationContentView
             }
         }
+        .defaultSize(width: Self.configuration.size.width, height: Self.configuration.size.height)
         .setupAsPresentationWindow(Self.configuration.slideIndexController) {
             openWindow(id: "presenter")
         }

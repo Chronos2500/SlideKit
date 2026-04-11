@@ -45,12 +45,14 @@ public struct PresentationView<Content>: View where Content: View {
         .ignoresSafeArea()
 #if os(macOS)
         .allowsWindowDragGesture()
-        .configureWindow { window in
-            window?.delegate = windowEventHandler
-            window?.standardWindowButton(.zoomButton)?.isHidden = true
-            window?.standardWindowButton(.miniaturizeButton)?.isHidden = true
-            window?.standardWindowButton(.closeButton)?.isHidden = true
-        }
+        // 拡張ディスプレイ運用時柔軟なディスプレイサイズに対応するためコメントアウト
+        // zoomButtonが表示されていて欲しいためコメントアウト
+//        .configureWindow { window in
+//            window?.delegate = windowEventHandler
+//            window?.standardWindowButton(.zoomButton)?.isHidden = true
+//            window?.standardWindowButton(.miniaturizeButton)?.isHidden = true
+//            window?.standardWindowButton(.closeButton)?.isHidden = true
+//        }
 #endif
     }
 }
